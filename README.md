@@ -3,9 +3,11 @@
 - # Problem Statement: 
 Develop a web application using Spring Boot that allows users to search and book rental properties.
 
-- Background: Finding a suitable rental property can be a time-consuming and frustrating experience for many people. It involves searching through numerous listings, contacting landlords or property managers, and going through the application process. Additionally, landlords and property managers have to deal with managing multiple properties and tenants, which can be a complex task. Therefore, there is a need for a web application that simplifies the rental property search process for both tenants and landlords.
+- # Background: 
+Finding a suitable rental property can be a time-consuming and frustrating experience for many people. It involves searching through numerous listings, contacting landlords or property managers, and going through the application process. Additionally, landlords and property managers have to deal with managing multiple properties and tenants, which can be a complex task. Therefore, there is a need for a web application that simplifies the rental property search process for both tenants and landlords.
 
-- # Solution: The proposed solution is to develop a web application using Spring Boot that allows users to search and book rental properties. The application should provide an easy-to-use interface for tenants to search for properties based on location, price, number of bedrooms, and other criteria. The application should also provide landlords and property managers with a dashboard to manage their properties, including viewing tenant applications, updating property information, and accepting rent payments.
+- # Solution: 
+The proposed solution is to develop a web application using Spring Boot that allows users to search and book rental properties. The application should provide an easy-to-use interface for tenants to search for properties based on location, price, number of bedrooms, and other criteria. The application should also provide landlords and property managers with a dashboard to manage their properties, including viewing tenant applications, updating property information, and accepting rent payments.
 
 - # Objectives:
     1. Develop a web application using Spring Boot that allows users to search and book rental properties.
