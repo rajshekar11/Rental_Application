@@ -3,9 +3,9 @@ package com.rental.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.rental.entities.Booking;
+import com.rental.entities.Tenant;
 
 @Repository
-public interface BookingRepository extends JpaRepository<Booking, Integer> {
+public interface TenantRepository extends JpaRepository<Tenant, Integer> {
 
 }
