@@ -21,6 +21,6 @@ public class Tenant {
     private String email;
     private String contactNumber;
     
-    @OneToMany(mappedBy = "guest")
+    @OneToMany(mappedBy = "tenant")
     List<Booking> bookings;
 }
