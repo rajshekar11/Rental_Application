@@ -1,0 +1,38 @@
+package com.rental.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rental.entities.LandLord;
+import com.rental.entities.LandLordDTO;
+import com.rental.exceptions.LandLordException;
+import com.rental.repository.LandLordRepository;
+
+@Service
+public class LandLordImpl implements LandLordService {
+	
+	@Autowired
+	private LandLordRepository lrep;
+
+	@Override
+	public LandLord addLandLord(LandLordDTO ld) throws LandLordException {
+		LandLord lad=new LandLord();
+		lad.setEmail(ld.getEmail());
+		lad.setContactNumber(ld.getContactNumber());
+		lad.setFirstName(ld.getFirstName());
+		lad.setLastName(ld.getLastName());
+		return lrep.save(lad);
+	}
+
+	@Override
+	public LandLord getLandLordByID(Integer landlordId) throws LandLordException {
+		Optional<LandLord> opt=lrep.findById(landlordId);
+		if(opt.isPresent()) {
+			return opt.get();
+		}
+		throw new LandLordException("LandLord with id: "+landlordId+" not found");
+	}
+
+}
