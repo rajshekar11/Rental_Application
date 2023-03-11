@@ -1,5 +1,8 @@
 package com.rental.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,8 +26,11 @@ public class Booking {
 	    private Integer bid;
 	    private int numberOfMonth;
 	    private int numberOfTenant;
+	    @JsonIgnoreProperties("bookings")
 	    @OneToOne
 	    private Tenant tenant;
+	    @JsonIgnoreProperties({"bookings"})
 	    @ManyToOne
 	    private Property property;
+	   
 }

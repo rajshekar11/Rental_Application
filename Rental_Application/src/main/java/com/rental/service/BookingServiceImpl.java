@@ -1,5 +1,6 @@
 package com.rental.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class BookingServiceImpl implements BookingService {
 	private PropertyRepository prep;
 	
 	@Override
-	public String makeABooking(BookingDTO bkg) throws BookingException,TenantException,PropertyException {
+	public Booking makeABooking(BookingDTO bkg) throws BookingException,TenantException,PropertyException {
 		Optional<Tenant> opt=trep.findById(bkg.getTenantID());
 		if(opt.isEmpty()) {
 			throw new TenantException("There are no tenant by ID: "+bkg.getTenantID());
@@ -45,7 +46,8 @@ public class BookingServiceImpl implements BookingService {
 		bk.setNumberOfTenant(bkg.getNumberOfTenant());
 		bk.setProperty(p);
 		bk.setTenant(t);
-		return "Booking successfull-> "+brep.save(bk).toString();
+		
+		return brep.save(bk);
 	}
 
 	@Override
@@ -66,6 +68,12 @@ public class BookingServiceImpl implements BookingService {
 			return b;
 		}
 		throw new BookingException("There are no booking by ID: "+bkingID);
+	}
+
+	@Override
+	public List<Booking> getAllBookings() throws BookingException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,6 +1,9 @@
 package com.rental.entities;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +23,7 @@ public class Tenant {
     private String lastName;
     private String email;
     private String contactNumber;
-    
+    @JsonIgnoreProperties("tenant")
     @OneToMany(mappedBy = "tenant")
-    List<Booking> bookings;
+    private List<Booking> bookings=new ArrayList<>();
 }

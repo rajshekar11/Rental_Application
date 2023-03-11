@@ -1,6 +1,9 @@
 package com.rental.entities;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,7 +24,7 @@ public class LandLord {
     private String lastName;
     private String email;
     private String contactNumber;
-    
+    @JsonIgnoreProperties("landlord")
     @OneToMany(mappedBy = "landlord", fetch = FetchType.LAZY)
-    private List<Property> properties;
+    private List<Property> properties=new ArrayList<>();
 }

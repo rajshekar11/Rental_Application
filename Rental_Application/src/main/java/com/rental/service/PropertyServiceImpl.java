@@ -66,6 +66,10 @@ public class PropertyServiceImpl implements PropertyService {
 	public List<Property> searchPropertyBasedOnLocation(String location) throws PropertyException {
 		Optional<List<Property>> opt2=prep.findByLocation(location);
 		if(opt2.isPresent()) {
+			List<Property> li=opt2.get();
+			if(li.size()==0) {
+				throw new PropertyException("There are no Properties for the given location: "+location);
+			}
 			return opt2.get();
 		}
 		throw new PropertyException("There are no Properties for the given location: "+location);
