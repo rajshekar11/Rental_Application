@@ -14,6 +14,8 @@ import com.rental.entities.TenantDTO;
 import com.rental.exceptions.TenantException;
 import com.rental.service.TenantService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class TenantController {
 	
@@ -21,7 +23,7 @@ public class TenantController {
 	private TenantService tser;
 
 	@PostMapping("tenant")
-	public ResponseEntity<Tenant> registerAsTenant(@RequestBody TenantDTO tenant) throws TenantException{
+	public ResponseEntity<Tenant> registerAsTenant(@Valid @RequestBody Tenant tenant) throws TenantException{
 		Tenant t=tser.registerAsTenant(tenant);
 		return new ResponseEntity<Tenant>(t,HttpStatus.ACCEPTED);
 	}

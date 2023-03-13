@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Entity
@@ -21,8 +23,12 @@ public class Tenant {
 	private Integer tid;
     private String firstName;
     private String lastName;
+    @Email(message = "Please enter correct email address")
     private String email;
+    @Size(min = 10, message = "Mobile number should be of 10 digits")
     private String contactNumber;
+    @Size(min = 8, message = "password should have at least 8 characters")
+    private String password;
     @JsonIgnoreProperties("tenant")
     @OneToMany(mappedBy = "tenant")
     private List<Booking> bookings=new ArrayList<>();

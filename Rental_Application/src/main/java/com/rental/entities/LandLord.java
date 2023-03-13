@@ -11,6 +11,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Entity
@@ -22,7 +24,9 @@ public class LandLord {
 	private Integer lId;
     private String firstName;
     private String lastName;
+    @Email(message = "Please enter correct email address")
     private String email;
+    @Size(min = 10, message = "Mobile number should be of 10 digits")
     private String contactNumber;
     @JsonIgnoreProperties("landlord")
     @OneToMany(mappedBy = "landlord", fetch = FetchType.LAZY)

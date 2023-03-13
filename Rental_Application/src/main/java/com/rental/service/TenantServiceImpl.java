@@ -17,7 +17,7 @@ public class TenantServiceImpl implements TenantService {
 	private TenantRepository trep;
 
 	@Override
-	public Tenant registerAsTenant(TenantDTO tenant) throws TenantException {
+	public Tenant registerAsTenant(Tenant tenant) throws TenantException {
 		Tenant t=new Tenant();
 		t.setContactNumber(tenant.getContactNumber());
 		t.setEmail(tenant.getEmail());

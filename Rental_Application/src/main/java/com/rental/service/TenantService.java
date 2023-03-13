@@ -6,7 +6,7 @@ import com.rental.exceptions.TenantException;
 
 public interface TenantService {
 
-	public Tenant registerAsTenant(TenantDTO tenant) throws TenantException;
+	public Tenant registerAsTenant(Tenant tenant) throws TenantException;
 	
 	public Tenant getTenantById(Integer tenantid) throws TenantException;
 }
