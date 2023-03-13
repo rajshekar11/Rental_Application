@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rental.entities.Property;
@@ -52,5 +53,17 @@ public class PropertyController {
 	public ResponseEntity<Property> getPropertyById(@PathVariable("propertyID") Integer propertyID) throws PropertyException{
 		Property p=pser.getPropertyById(propertyID);
 		return new ResponseEntity<Property>(p,HttpStatus.OK);
+	}
+	
+	@GetMapping("propertyAll")
+	public ResponseEntity<List<Property>> getAllProperties() throws PropertyException{
+		List<Property> li=pser.getAllProperties();
+		return new ResponseEntity<List<Property>>(li,HttpStatus.OK);
+	}
+	
+	@GetMapping("/getSortedProperties/{field}")
+	public ResponseEntity<List<Property>> getSortedPropertyListWithField(@PathVariable("field") String field, @RequestParam("direction") String direction){
+		List<Property> li= pser.getSortedPropertyListWithField(field, direction);
+		return new ResponseEntity<List<Property>>(li,HttpStatus.OK);
 	}
 }

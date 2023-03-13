@@ -1,5 +1,7 @@
 package com.rental.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,5 +41,17 @@ public class BookingController {
 	public ResponseEntity<Booking> cancelBookingById(@PathVariable("bkingID") Integer bkingID) throws BookingException{
 		Booking b=bser.cancelBookingById(bkingID);
 		return new ResponseEntity<>(b,HttpStatus.OK);
+	}
+	
+	@GetMapping("bookingByProperty/{pId}")
+	public ResponseEntity<List<Booking>> getAllBookingsOfAProperty(@PathVariable("pId") Integer pId) throws BookingException{
+		List<Booking> li=bser.getAllBookingsOfAProperty(pId);
+		return new ResponseEntity<>(li,HttpStatus.OK);
+	}
+	
+	@GetMapping("bookingAll")
+	public ResponseEntity<List<Booking>> getAllBookings() throws BookingException{
+		List<Booking> li=bser.getAllBookings();
+		return new ResponseEntity<>(li,HttpStatus.OK);
 	}
 }

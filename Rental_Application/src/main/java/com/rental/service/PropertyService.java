@@ -19,4 +19,8 @@ public interface PropertyService {
 	public List<Property> searchPropertyBasedOnLocation(String location) throws PropertyException;
 	
 	public Property getPropertyById(Integer propertyID) throws PropertyException;
+	
+	public List<Property> getAllProperties() throws PropertyException;
+	
+	public List<Property> getSortedPropertyListWithField(String field, String direction);
 }

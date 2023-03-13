@@ -72,8 +72,20 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public List<Booking> getAllBookings() throws BookingException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Booking> li=brep.findAll();
+		if(li.size()==0) {
+			throw new BookingException("There are no bookings");
+		}
+		return li;
+	}
+
+	@Override
+	public List<Booking> getAllBookingsOfAProperty(Integer pId) throws BookingException {
+		List<Booking> li=brep.getAllBookingsBypId(pId);
+		if(li.size()==0) {
+			throw new BookingException("There are no bookings for this property");
+		}
+		return li;
 	}
 
 }

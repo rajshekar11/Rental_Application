@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.rental.entities.LandLord;
@@ -82,6 +83,20 @@ public class PropertyServiceImpl implements PropertyService {
 			return opt.get();
 		}
 		throw new PropertyException("There are no property by property ID: "+propertyID);
+	}
+
+	@Override
+	public List<Property> getAllProperties() throws PropertyException {
+		List<Property> li=prep.findAll();
+		if(li.size()==0) {
+			throw new PropertyException("There are no properties");
+		}
+		return li;
+	}
+
+	@Override
+	public List<Property> getSortedPropertyListWithField(String field, String direction) {
+		return prep.findAll(direction.equals("asc")? Sort.by(field).ascending() : Sort.by(field).descending());
 	}
 
 }

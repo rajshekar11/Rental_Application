@@ -16,6 +16,8 @@ public interface BookingService {
 	
 	public Booking cancelBookingById(Integer bkingID) throws BookingException;
 	
+	public List<Booking> getAllBookingsOfAProperty(Integer pId) throws BookingException;
+	
 	public List<Booking> getAllBookings() throws BookingException;
 	
 }

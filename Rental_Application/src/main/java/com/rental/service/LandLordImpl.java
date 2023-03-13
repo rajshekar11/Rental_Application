@@ -1,5 +1,6 @@
 package com.rental.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,15 @@ public class LandLordImpl implements LandLordService {
 			return opt.get();
 		}
 		throw new LandLordException("LandLord with id: "+landlordId+" not found");
+	}
+
+	@Override
+	public List<LandLord> getAllLandLord() throws LandLordException {
+		List<LandLord> li=lrep.findAll();
+		if(li.size()==0) {
+			throw new LandLordException("There are no landlords");
+		}
+		return li;
 	}
 
 }
