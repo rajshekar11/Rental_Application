@@ -16,6 +16,8 @@ import com.rental.entities.LandLordDTO;
 import com.rental.exceptions.LandLordException;
 import com.rental.service.LandLordService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class LandLordController {
 
@@ -23,7 +25,7 @@ public class LandLordController {
 	private LandLordService lser;
 	
 	@PostMapping("/landlord")
-	public ResponseEntity<LandLord> addLandLord(@RequestBody LandLordDTO ld) throws LandLordException{
+	public ResponseEntity<LandLord> addLandLord(@Valid @RequestBody LandLord ld) throws LandLordException{
 		LandLord l=lser.addLandLord(ld);
 		return new ResponseEntity<LandLord>(l,HttpStatus.ACCEPTED);
 	}

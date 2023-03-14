@@ -8,7 +8,7 @@ import com.rental.exceptions.LandLordException;
 
 public interface LandLordService {
 
-	public LandLord addLandLord(LandLordDTO ld) throws LandLordException;
+	public LandLord addLandLord(LandLord ld) throws LandLordException;
 	
 	public LandLord getLandLordByID(Integer landlordId) throws LandLordException;
 	

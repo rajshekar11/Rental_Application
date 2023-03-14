@@ -18,12 +18,8 @@ public class TenantServiceImpl implements TenantService {
 
 	@Override
 	public Tenant registerAsTenant(Tenant tenant) throws TenantException {
-		Tenant t=new Tenant();
-		t.setContactNumber(tenant.getContactNumber());
-		t.setEmail(tenant.getEmail());
-		t.setFirstName(tenant.getFirstName());
-		t.setLastName(tenant.getLastName());
-		return trep.save(t);
+		
+		return trep.save(tenant);
 	}
 
 	@Override

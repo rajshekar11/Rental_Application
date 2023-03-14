@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,10 +25,13 @@ public class LandLord {
 	private Integer lId;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     @Email(message = "Please enter correct email address")
     private String email;
     @Size(min = 10, message = "Mobile number should be of 10 digits")
     private String contactNumber;
+    @Size(min = 8, message = "password should have at least 8 characters")
+    private String password;
     @JsonIgnoreProperties("landlord")
     @OneToMany(mappedBy = "landlord", fetch = FetchType.LAZY)
     private List<Property> properties=new ArrayList<>();

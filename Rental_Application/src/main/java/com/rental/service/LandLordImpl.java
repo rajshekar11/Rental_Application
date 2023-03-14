@@ -18,13 +18,9 @@ public class LandLordImpl implements LandLordService {
 	private LandLordRepository lrep;
 
 	@Override
-	public LandLord addLandLord(LandLordDTO ld) throws LandLordException {
-		LandLord lad=new LandLord();
-		lad.setEmail(ld.getEmail());
-		lad.setContactNumber(ld.getContactNumber());
-		lad.setFirstName(ld.getFirstName());
-		lad.setLastName(ld.getLastName());
-		return lrep.save(lad);
+	public LandLord addLandLord(LandLord ld) throws LandLordException {
+		
+		return lrep.save(ld);
 	}
 
 	@Override
