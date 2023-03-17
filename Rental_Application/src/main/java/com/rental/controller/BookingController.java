@@ -37,19 +37,19 @@ public class BookingController {
 		return new ResponseEntity<>(b,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("booking/{bkingID}")
+	@DeleteMapping("/booking/{bkingID}")
 	public ResponseEntity<Booking> cancelBookingById(@PathVariable("bkingID") Integer bkingID) throws BookingException{
 		Booking b=bser.cancelBookingById(bkingID);
 		return new ResponseEntity<>(b,HttpStatus.OK);
 	}
 	
-	@GetMapping("bookingByProperty/{pId}")
+	@GetMapping("/bookingByProperty/{pId}")
 	public ResponseEntity<List<Booking>> getAllBookingsOfAProperty(@PathVariable("pId") Integer pId) throws BookingException{
 		List<Booking> li=bser.getAllBookingsOfAProperty(pId);
 		return new ResponseEntity<>(li,HttpStatus.OK);
 	}
 	
-	@GetMapping("bookingAll")
+	@GetMapping("/bookingAll")
 	public ResponseEntity<List<Booking>> getAllBookings() throws BookingException{
 		List<Booking> li=bser.getAllBookings();
 		return new ResponseEntity<>(li,HttpStatus.OK);

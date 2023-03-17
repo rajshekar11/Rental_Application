@@ -55,7 +55,7 @@ public class PropertyController {
 		return new ResponseEntity<Property>(p,HttpStatus.OK);
 	}
 	
-	@GetMapping("propertyAll")
+	@GetMapping("/propertyAll")
 	public ResponseEntity<List<Property>> getAllProperties() throws PropertyException{
 		List<Property> li=pser.getAllProperties();
 		return new ResponseEntity<List<Property>>(li,HttpStatus.OK);
