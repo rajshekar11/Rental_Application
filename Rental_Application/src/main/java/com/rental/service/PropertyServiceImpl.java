@@ -99,4 +99,15 @@ public class PropertyServiceImpl implements PropertyService {
 		return prep.findAll(direction.equals("asc")? Sort.by(field).ascending() : Sort.by(field).descending());
 	}
 
+	@Override
+	public Property deleteProperty(Integer pid) throws PropertyException {
+		Optional<Property> opt=prep.findById(pid);
+		if(opt.isPresent()) {
+			Property p=opt.get();
+			prep.delete(p);
+			return p;
+		}
+		throw new PropertyException("There are no property by property ID: "+pid);
+	}
+
 }

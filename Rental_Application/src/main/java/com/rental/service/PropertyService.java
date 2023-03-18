@@ -23,4 +23,6 @@ public interface PropertyService {
 	public List<Property> getAllProperties() throws PropertyException;
 	
 	public List<Property> getSortedPropertyListWithField(String field, String direction);
+	
+	public Property deleteProperty(Integer pid) throws PropertyException;
 }
