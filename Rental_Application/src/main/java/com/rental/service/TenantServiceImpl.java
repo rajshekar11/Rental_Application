@@ -31,4 +31,25 @@ public class TenantServiceImpl implements TenantService {
 		throw new TenantException("There are no tenant by Id: "+tenantid);
 	}
 
+	@Override
+	public Tenant updateTenant(Tenant tenant) throws TenantException {
+		Optional<Tenant> opt=trep.findById(tenant.getTid());
+		if(opt.isPresent()) {
+			return trep.save(tenant);
+			
+		}
+		throw new TenantException("There are no tenant by Id: "+tenant.getTid());
+	}
+
+	@Override
+	public Tenant deleteTenantById(Integer tenantid) throws TenantException {
+		Optional<Tenant> opt=trep.findById(tenantid);
+		if(opt.isPresent()) {
+			Tenant t=opt.get();
+			trep.delete(t);
+			return t;
+		}
+		throw new TenantException("There are no tenant by Id: "+tenantid);
+	}
+
 }

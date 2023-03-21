@@ -9,4 +9,8 @@ public interface TenantService {
 	public Tenant registerAsTenant(Tenant tenant) throws TenantException;
 	
 	public Tenant getTenantById(Integer tenantid) throws TenantException;
+	
+	public Tenant updateTenant(Tenant tenant) throws TenantException;
+	
+	public Tenant deleteTenantById(Integer tenantid) throws TenantException;
 }
