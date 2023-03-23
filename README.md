@@ -1,25 +1,45 @@
-# Rental-Properties-Booking-Application
+### Rental Properties Booking Application REST API
 
-- # Problem Statement: 
-Develop a web application using Spring Boot that allows users to search and book rental properties.
+- This REST API was created by me(Rajashekhara A.E) for an Online Rental Properties Booking Application. This API handles all of the basic CRUD functions of any Rental Management Application platform, including user validation at each stage.
 
-- # Background: 
-Finding a suitable rental property can be a time-consuming and frustrating experience for many people. It involves searching through numerous listings, contacting landlords or property managers, and going through the application process. Additionally, landlords and property managers have to deal with managing multiple properties and tenants, which can be a complex task. Therefore, there is a need for a web application that simplifies the rental property search process for both tenants and landlords.
+## Tech Stack
 
-- # Solution: 
-The proposed solution is to develop a web application using Spring Boot that allows users to search and book rental properties. The application should provide an easy-to-use interface for tenants to search for properties based on location, price, number of bedrooms, and other criteria. The application should also provide landlords and property managers with a dashboard to manage their properties, including viewing tenant applications, updating property information, and accepting rent payments.
+- Core Java
+- Spring Framework
+- Spring Boot
+- Spring Security
+- JWT
+- Spring Data JPA
+- Hibernate
+- MySQL
+- PostMan
+- Swagger
+- Lombok
 
-- # Objectives:
-    1. Develop a web application using Spring Boot that allows users to search and book rental properties.
-    2. Provide an intuitive and user-friendly interface for tenants to search for properties based on location, price, number of bedrooms, and other criteria.
-    3. Provide landlords and property managers with a dashboard to manage their properties, including viewing tenant applications, updating property information, and            accepting rent payments.
-    4. Implement user authentication and authorization to ensure that users can only access and modify their own information.
-    5. Ensure that the application is secure and reliable, with appropriate error handling and data validation.
-    6. Deploy the application to a cloud platform such as AWS or Google Cloud Platform for easy access and scalability.
-    
-- # Expected Deliverables:
-    1. A web application developed using Spring Boot that meets the above objectives.
-    2. Documentation detailing the application's architecture, design, and implementation.
-    3. A user manual to guide users on how to use the application.
-    4. Source code and all necessary files required for deployment.
-    5. A deployed and functioning application on a cloud platform (like Railway) for testing and use.
+### Features
+
+- Login into the Application
+- Authentication and validation for Tenant using the Spring Security and JWT Token.
+- Tenant Profile Management
+- View All Properties
+- View Properties based on location, price
+- Filter Properties based on ascending or descending order of price
+- Updating Property Information
+- LandLord Information
+- Search and book rental properties
+- View Tenant application 
+
+## Installation & Run
+
+- You need update the database configuration in the [application.properties](https://github.com/rajshekar11/dangerous-smash-6971/blob/main/TripMaker/src/main/resources/application.properties) file before launching the API server.
+- Change the port number, username, and password to match your local database configuration.
+
+```
+    server.port=8080
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/tripmaker;
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    spring.datasource.username=dbusername
+    spring.datasource.password=dbpassword
+
+```
