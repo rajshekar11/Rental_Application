@@ -43,3 +43,10 @@
     spring.datasource.password=dbpassword
 
 ```
+In railway website configure variables
+
+DB_HOST=
+DB_NAME=
+DB_PORT=
+DB_USERNAME=root
+DB_PASSWORD=
