@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import com.rental.entities.Tenant;
 
@@ -28,6 +30,7 @@ public class TenantController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	@CrossOrigin(origins = "https://rentalapplication-prod.up.railway.app/tenant")
 	@PostMapping("/tenant")
 	public ResponseEntity<Tenant> registerAsTenant(@Valid @RequestBody Tenant tenant) throws TenantException{
 		tenant.setPassword(passwordEncoder.encode(tenant.getPassword()));
