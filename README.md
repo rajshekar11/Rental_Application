@@ -1,20 +1,20 @@
 ### Online Rental Properties Booking API
 
-- This REST API was created by me(Rajashekhara A.E) for an Online Rental Properties Booking Application. This API handles all of the basic CRUD functions of any Rental Management Application platform, including user validation at each stage.
+- This application is designed to facilitate the booking and management of rental properties online. It provides a set of REST API endpoints that handle CRUD (Create, Read, Update, Delete) operations for managing rental properties and bookings. The application is built using the following technologies and frameworks:
 
 ## Tech Stack
 
-- Core Java
-- Spring Framework
-- Spring Boot
-- Spring Security
-- JWT
-- Spring Data JPA
-- Hibernate
-- MySQL
-- PostMan
-- Swagger
-- Lombok
+- Core Java: The programming language used for building the application logic.
+- Spring Framework: An open-source framework that provides comprehensive infrastructure support for developing Java applications.
+- Spring Boot: A framework that simplifies the setup and configuration of Spring applications, providing a faster and easier development experience.
+- Spring Security: A powerful authentication and authorization framework that secures the application and ensures the privacy of user data.
+- JWT (JSON Web Tokens): A standard for securely transmitting information between parties as a JSON object. It is used for authentication and validation of tenants.
+- Spring Data JPA: A part of the Spring Framework that makes it easy to implement JPA (Java Persistence API) repositories, providing convenient access to the database.
+- Hibernate: An object-relational mapping (ORM) framework that simplifies the interaction with the database and provides efficient data persistence.
+- MySQL: A popular relational database management system used for storing and retrieving data in a structured manner.
+- Postman: A popular collaboration platform for API development and testing.
+- Swagger: A tool for designing, building, documenting, and testing RESTful APIs.
+- Lombok: A Java library that helps reduce boilerplate code by automatically generating getter, setter, and other utility methods.
 
 ### Features
 
@@ -29,20 +29,24 @@
 - Search and book rental properties
 - View Tenant application 
 
-## Installation & Run
+## Getting Started
 
-- You need update the database configuration in the [application.properties](https://github.com/rajshekar11/dangerous-smash-6971/blob/main/TripMaker/src/main/resources/application.properties) file before launching the API server.
-- Change the port number, username, and password to match your local database configuration.
+To set up the project locally, follow these steps:
 
-```
-    server.port=8080
+- Clone the repository: git clone https://github.com/your-username/rental-properties-booking.git
+- Navigate to the project directory: cd rental-properties-booking
+- Install the necessary dependencies.
+- Configure the MySQL database connection details in the application properties file.
+- Build and run the application using your preferred IDE or command-line tools.
+- Access the API endpoints using tools like Postman or the Swagger UI.
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/tripmaker;
-    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-    spring.datasource.username=dbusername
-    spring.datasource.password=dbpassword
+Please refer to the project documentation and code comments for detailed information about the API endpoints, request payloads, and response structures.
 
-```
+## Getting Started
+
+The Online Rental Properties Booking Application provides a powerful and secure platform for managing rental properties and bookings. It leverages popular Java frameworks and technologies like Spring Boot, Spring Security, and JWT Tokens to ensure data integrity, user authentication
+
+<!-- 
 In railway website configure variables
 
 DB_HOST=
@@ -50,3 +54,4 @@ DB_NAME=
 DB_PORT=
 DB_USERNAME=root
 DB_PASSWORD=
+-->
