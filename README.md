@@ -33,7 +33,7 @@
 
 To set up the project locally, follow these steps:
 
-- Clone the repository: git clone https://github.com/your-username/rental-properties-booking.git
+- Clone the repository: git clone https://github.com/rajshekar11/Rental_Application
 - Navigate to the project directory: cd rental-properties-booking
 - Install the necessary dependencies.
 - Configure the MySQL database connection details in the application properties file.
