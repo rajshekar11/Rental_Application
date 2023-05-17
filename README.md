@@ -1,4 +1,4 @@
-### Rental Properties Booking Application REST API
+### Online Rental Properties Booking API
 
 - This REST API was created by me(Rajashekhara A.E) for an Online Rental Properties Booking Application. This API handles all of the basic CRUD functions of any Rental Management Application platform, including user validation at each stage.
 
