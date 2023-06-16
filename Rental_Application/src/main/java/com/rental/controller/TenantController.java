@@ -21,6 +21,7 @@ import com.rental.service.TenantService;
 import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping("/api")
 public class TenantController {
 	
 	@Autowired
