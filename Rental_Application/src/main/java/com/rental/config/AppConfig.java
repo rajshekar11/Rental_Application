@@ -22,7 +22,6 @@ public class AppConfig {
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and()
 		.csrf().disable()
-		.cors()
 		.authorizeHttpRequests()
 		.requestMatchers(HttpMethod.POST, "/tenant").permitAll()
 		.requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
